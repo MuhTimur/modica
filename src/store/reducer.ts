@@ -14,7 +14,7 @@ const reducer = (
   switch (action.type) {
     case actionTypes.ADD_TODO_ITEM:
       const newItem: ITodoItem = {
-        id: state.items.length,
+        id: state.items.length + 1,
         text: action.item.text,
         isCrossed: false,
       };
@@ -22,6 +22,9 @@ const reducer = (
         ...state,
         items: state.items.concat(newItem),
       };
+      
+    // case actionTypes.CROSS_TODO_ITEM:
+    //   
   }
   return state;
 };

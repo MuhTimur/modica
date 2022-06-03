@@ -6,5 +6,5 @@ export function addTodoItem(item: ITodoItem) {
     item,
   };
 
-  return (dispatch: DispatchType) => dispatch(action);
+  return action;
 }

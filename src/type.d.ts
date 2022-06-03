@@ -1,7 +1,7 @@
 interface ITodoItem {
-  id: number;
+  id?: number;
   text: string;
-  isCrossed: boolean;
+  isCrossed?: boolean;
 }
 
 type TodoState = {
