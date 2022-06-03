@@ -4,17 +4,19 @@ import styles from "./styles/Checkbox.module.scss";
 
 interface Props {
   id: string;
+  isChecked: boolean;
 
   onCheck: () => void;
 }
 
-const Input = ({ id, onCheck }: Props) => {
+const Input = ({ id, isChecked, onCheck }: Props) => {
   return (
     <div className={styles.root}>
       <input
         className={styles.checkbox}
+        checked={isChecked}
         type="checkbox"
-        onClick={onCheck}
+        onChange={onCheck}
         id={id}
       />
       <label htmlFor={id}></label>

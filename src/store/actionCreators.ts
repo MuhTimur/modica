@@ -8,3 +8,12 @@ export function addTodoItem(item: ITodoItem) {
 
   return action;
 }
+
+export function crossTodoItem(item: ITodoItem) {
+  const action: TodoAction = {
+    type: actionTypes.CROSS_TODO_ITEM,
+    item,
+  };
+
+  return action;
+}

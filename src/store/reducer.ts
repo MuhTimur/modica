@@ -22,9 +22,16 @@ const reducer = (
         ...state,
         items: state.items.concat(newItem),
       };
-      
-    // case actionTypes.CROSS_TODO_ITEM:
-    //   
+
+    case actionTypes.CROSS_TODO_ITEM:
+      return {
+        ...state,
+        items: state.items.map((item: ITodoItem) =>
+          item.id === action.item.id
+            ? { ...item, isCrossed: !item.isCrossed }
+            : item
+        ),
+      };
   }
   return state;
 };

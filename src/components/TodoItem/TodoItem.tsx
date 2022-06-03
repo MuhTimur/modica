@@ -1,6 +1,8 @@
 import React from "react";
 import { useDispatch } from "react-redux";
+import classNames from "classnames";
 
+import { crossTodoItem } from "../../store/actionCreators";
 import Checkbox from "../Checkbox/Checkbox";
 import styles from "./styles/TodoItem.module.scss";
 
@@ -14,13 +16,19 @@ const Input = (props: Props) => {
   const dispatch = useDispatch();
 
   const onCross = () => {
-    // dispatch(addTodoItem(...))
+    dispatch(crossTodoItem(item));
   };
 
   return (
     <div className={styles.root}>
-      <Checkbox id={"id_" + item.id} onCheck={onCross} />
-      <div className={styles.text}>{item.text}</div>
+      <Checkbox id={"id_" + item.id} onCheck={onCross} isChecked={!!item.isCrossed} />
+      <div
+        className={classNames(styles.text, {
+          [styles.crossedText]: item.isCrossed,
+        })}
+      >
+        {item.text}
+      </div>
     </div>
   );
 };
