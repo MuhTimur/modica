@@ -1,15 +1,26 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { applyMiddleware, createStore, Store } from "redux";
+import { Provider } from "react-redux";
+import thunk from "redux-thunk";
+
 import "./index.css";
 import App from "./App";
+import reducer from "./store/reducer";
 import reportWebVitals from "./reportWebVitals";
+
+const store: Store<TodoState, TodoAction> & {
+  dispatch: DispatchType;
+} = createStore(reducer, applyMiddleware(thunk));
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>
 );
 
