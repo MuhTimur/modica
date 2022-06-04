@@ -20,7 +20,7 @@ const reducer = (
       };
       return {
         ...state,
-        items: state.items.concat(newItem),
+        items: [newItem].concat(state.items),
       };
 
     case actionTypes.CROSS_TODO_ITEM:
