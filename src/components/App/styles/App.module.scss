@@ -1,18 +1,24 @@
-.app {
-  text-align: center;
+.root {
+  align-items: center;
   background-color: #f2f2f2;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  min-height: 100vh;
+  text-align: center;
 }
 
-.appHeader {
-  font-size: 100px;
+.header {
   color: #e7d0d0;
+  font-size: 100px;
+  padding: 10px;
 }
 
-h1.appHeader {
+h1.header {
   font-weight: 100;
+  margin: 0;
+}
+
+.content {
+  padding-bottom: 50px;
 }

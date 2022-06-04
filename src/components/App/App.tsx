@@ -22,14 +22,16 @@ function App() {
   );
 
   return (
-    <div className={styles.app}>
-      <header className={styles.appHeader}>
-        <h1 className={styles.appHeader}>todos</h1>
+    <div className={styles.root}>
+      <header className={styles.header}>
+        <h1 className={styles.header}>todos</h1>
       </header>
-      <Input onSubmit={(value: string) => onItemAdd(value)} />
-      {items.map((item: ITodoItem) => (
-        <TodoItem key={item.id} item={item} />
-      ))}
+      <div className={styles.content}>
+        <Input onSubmit={(value: string) => onItemAdd(value)} />
+        {items.map((item: ITodoItem) => (
+          <TodoItem key={item.id} item={item} />
+        ))}
+      </div>
     </div>
   );
 }
