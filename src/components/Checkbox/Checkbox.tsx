@@ -9,7 +9,7 @@ interface Props {
   onCheck: () => void;
 }
 
-const Input = ({ id, isChecked, onCheck }: Props) => {
+const Checkbox = ({ id, isChecked, onCheck }: Props) => {
   return (
     <div className={styles.root}>
       <input
@@ -24,4 +24,4 @@ const Input = ({ id, isChecked, onCheck }: Props) => {
   );
 };
 
-export default React.memo(Input);
+export default React.memo(Checkbox);

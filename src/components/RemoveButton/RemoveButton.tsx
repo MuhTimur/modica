@@ -8,10 +8,10 @@ interface Props {
   onClick: () => void;
 }
 
-const Input = ({ isVisible, onClick }: Props) => {
+const RemoveButton = ({ isVisible, onClick }: Props) => {
   return (
     (isVisible && <span className={styles.root} onClick={onClick} />) || null
   );
 };
 
-export default React.memo(Input);
+export default React.memo(RemoveButton);

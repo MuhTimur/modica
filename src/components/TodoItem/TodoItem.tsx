@@ -11,9 +11,7 @@ interface Props {
   item: ITodoItem;
 }
 
-const Input = (props: Props) => {
-  const { item } = props;
-
+const TodoItem = ({ item }: Props) => {
   const [isHovered, setIsHovered] = useState(false);
   const dispatch = useDispatch();
 
@@ -48,4 +46,4 @@ const Input = (props: Props) => {
   );
 };
 
-export default React.memo(Input);
+export default React.memo(TodoItem);
