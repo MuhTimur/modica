@@ -17,3 +17,12 @@ export function crossTodoItem(item: ITodoItem) {
 
   return action;
 }
+
+export function removeTodoItem(item: ITodoItem) {
+  const action: TodoAction = {
+    type: actionTypes.REMOVE_TODO_ITEM,
+    item,
+  };
+
+  return action;
+}

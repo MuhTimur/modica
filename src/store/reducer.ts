@@ -32,6 +32,14 @@ const reducer = (
             : item
         ),
       };
+
+    case actionTypes.REMOVE_TODO_ITEM:
+      return {
+        ...state,
+        items: state.items.filter(
+          (item: ITodoItem) => item.id !== action.item.id
+        ),
+      };
   }
   return state;
 };
