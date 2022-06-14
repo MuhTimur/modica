@@ -4,10 +4,10 @@ import { useSelector } from "react-redux";
 import {
   addTodoItem,
   categorySelected,
-  clearCompletedTodos,
+  clearCompletedTodos
 } from "../../store/actionCreators";
 import ControlPanel, {
-  ControlPanelCategory,
+  ControlPanelCategory
 } from "../ControlPanel/ControlPanel";
 import Input from "../Input/Input";
 import TodoItem from "../TodoItem/TodoItem";
@@ -19,7 +19,7 @@ function App() {
   const onItemAdd = (text: string) => {
     dispatch(
       addTodoItem({
-        text,
+        text
       })
     );
   };

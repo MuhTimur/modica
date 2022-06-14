@@ -36,7 +36,7 @@ const TodoItem = ({ item }: Props) => {
       />
       <div
         className={classNames(styles.text, {
-          [styles.crossedText]: item.isCrossed,
+          [styles.crossedText]: item.isCrossed
         })}
       >
         {item.text}

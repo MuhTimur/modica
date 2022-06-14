@@ -6,7 +6,7 @@ import styles from "./styles/ControlPanel.module.scss";
 export enum ControlPanelCategory {
   ALL,
   ACTIVE,
-  COMPLETED,
+  COMPLETED
 }
 
 interface Props {
@@ -21,7 +21,7 @@ const ControlPanel = ({
   numberOfElements,
   activeCategory,
   onClearCompleted,
-  onCategorySelected,
+  onCategorySelected
 }: Props) => {
   const areAllSelected = activeCategory === ControlPanelCategory.ALL;
   const areActiveSelected = activeCategory === ControlPanelCategory.ACTIVE;
@@ -35,7 +35,7 @@ const ControlPanel = ({
       </span>
       <span
         className={classNames(styles.menuItem, {
-          [styles.selected]: areAllSelected,
+          [styles.selected]: areAllSelected
         })}
         onClick={() => onCategorySelected(ControlPanelCategory.ALL)}
       >
@@ -43,7 +43,7 @@ const ControlPanel = ({
       </span>
       <span
         className={classNames(styles.menuItem, {
-          [styles.selected]: areActiveSelected,
+          [styles.selected]: areActiveSelected
         })}
         onClick={() => onCategorySelected(ControlPanelCategory.ACTIVE)}
       >
@@ -51,7 +51,7 @@ const ControlPanel = ({
       </span>
       <span
         className={classNames(styles.menuItem, {
-          [styles.selected]: areCompletedSelected,
+          [styles.selected]: areCompletedSelected
         })}
         onClick={() => onCategorySelected(ControlPanelCategory.COMPLETED)}
       >

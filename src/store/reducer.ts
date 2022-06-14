@@ -4,22 +4,23 @@ import { ControlPanelCategory } from "../components/ControlPanel/ControlPanel";
 const initialState: TodoState = {
   items: [
     { id: 1, text: "One", isCrossed: false },
-    { id: 2, text: "Two", isCrossed: true },
+    { id: 2, text: "Two", isCrossed: true }
   ],
-  selectedCategory: ControlPanelCategory.ALL,
+  selectedCategory: ControlPanelCategory.ALL
 };
 
 const reducer = (state: TodoState = initialState, action: any): TodoState => {
   switch (action.type) {
     case actionTypes.ADD_TODO_ITEM:
-      const newItem: ITodoItem = {
-        id: state.items.length + 1,
-        text: action.item.text,
-        isCrossed: false,
-      };
       return {
         ...state,
-        items: [newItem].concat(state.items),
+        items: [
+          {
+            id: state.items.length + 1,
+            text: action.item.text,
+            isCrossed: false
+          } as ITodoItem
+        ].concat(state.items)
       };
 
     case actionTypes.CROSS_TODO_ITEM:
@@ -29,7 +30,7 @@ const reducer = (state: TodoState = initialState, action: any): TodoState => {
           item.id === action.item.id
             ? { ...item, isCrossed: !item.isCrossed }
             : item
-        ),
+        )
       };
 
     case actionTypes.REMOVE_TODO_ITEM:
@@ -37,19 +38,19 @@ const reducer = (state: TodoState = initialState, action: any): TodoState => {
         ...state,
         items: state.items.filter(
           (item: ITodoItem) => item.id !== action.item.id
-        ),
+        )
       };
 
     case actionTypes.CLEAR_COMPLETED_TODOS:
       return {
         ...state,
-        items: state.items.filter((item: ITodoItem) => !item.isCrossed),
+        items: state.items.filter((item: ITodoItem) => !item.isCrossed)
       };
 
     case actionTypes.CATEGORY_SELECTED:
       return {
         ...state,
-        selectedCategory: action.category,
+        selectedCategory: action.category
       };
   }
   return state;

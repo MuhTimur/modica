@@ -4,7 +4,7 @@ import { ControlPanelCategory } from "../components/ControlPanel/ControlPanel";
 export function addTodoItem(item: ITodoItem) {
   const action: TodoAction = {
     type: actionTypes.ADD_TODO_ITEM,
-    item,
+    item
   };
 
   return action;
@@ -13,7 +13,7 @@ export function addTodoItem(item: ITodoItem) {
 export function crossTodoItem(item: ITodoItem) {
   const action: TodoAction = {
     type: actionTypes.CROSS_TODO_ITEM,
-    item,
+    item
   };
 
   return action;
@@ -22,7 +22,7 @@ export function crossTodoItem(item: ITodoItem) {
 export function removeTodoItem(item: ITodoItem) {
   const action: TodoAction = {
     type: actionTypes.REMOVE_TODO_ITEM,
-    item,
+    item
   };
 
   return action;
@@ -30,7 +30,7 @@ export function removeTodoItem(item: ITodoItem) {
 
 export function clearCompletedTodos() {
   const action: ClearTodosAction = {
-    type: actionTypes.CLEAR_COMPLETED_TODOS,
+    type: actionTypes.CLEAR_COMPLETED_TODOS
   };
 
   return action;
@@ -39,7 +39,7 @@ export function clearCompletedTodos() {
 export function categorySelected(category: ControlPanelCategory) {
   const action: CategorySelectedAction = {
     type: actionTypes.CATEGORY_SELECTED,
-    category,
+    category
   };
 
   return action;
